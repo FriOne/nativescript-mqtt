@@ -1,7 +1,7 @@
 import { IEvent, EventHandler, guid, Message } from './common';
-let MQTT = require('./mqttws31');
+import * as MQTT from 'paho-mqtt';
 
-interface ClientOptions {
+export interface ClientOptions {
   host? : string,
   port? : number,
   useSSL? : boolean,
@@ -10,8 +10,8 @@ interface ClientOptions {
   retryOnDisconnect? : boolean
 }
 
-class MQTTClient {
-  private mqttClient;
+export class MQTTClient {
+  private mqttClient: any;
   private host: string;
   private port: number;
   private path: string;
@@ -97,5 +97,3 @@ class MQTTClient {
   }
 
 }
-
-export { MQTTClient, ClientOptions }
