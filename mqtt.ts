@@ -1,7 +1,7 @@
-const window = {
+global.window = {
   setTimeout: setTimeout,
   clearTimeout: clearTimeout
 };
-const localStorage = new Map();
+global.localStorage = new Map();
 
 export * from 'paho-mqtt';
