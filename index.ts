@@ -1,6 +1,6 @@
 import 'nativescript-websockets';
 import { IEvent, EventHandler, guid, Message } from './common';
-import { MQTT } from './mqtt.ts';
+import { MQTT } from './mqtt';
 
 export interface ClientOptions {
   host? : string,
