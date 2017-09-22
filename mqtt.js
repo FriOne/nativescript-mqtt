@@ -1,8 +1,23 @@
-const window = {
+export const window = {
   setTimeout: setTimeout,
   clearTimeout: clearTimeout
 };
-const localStorage = new Map();
+
+export class localStorage {
+  map = {};
+
+  getItem(key) {
+    return this.map[key];
+  }
+
+  setItem(key, value) {
+    this.map[key] = value;
+  }
+
+  removeItem(key) {
+    delete this.map[key];
+  }
+}
 
 /*******************************************************************************
  * Copyright (c) 2013 IBM Corp.
