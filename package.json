@@ -1,6 +1,6 @@
 {
   "name": "nativescript-mqtt",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A {N} MQTT WebSocket plugin for iOS and Android",
   "devDependencies": {},
   "main": "index.js",

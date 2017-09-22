@@ -1,12 +1,6 @@
 import 'nativescript-websockets';
 import { IEvent, EventHandler, guid, Message } from './common';
-import * as MQTT from 'paho-mqtt';
-
-const window = {
-  setTimeout: setTimeout,
-  clearTimeout: clearTimeout
-};
-const localStorage = new Map();
+import * as MQTT from './mqtt';
 
 export interface ClientOptions {
   host? : string,
