@@ -762,16 +762,6 @@ export const MQTT = (function (global) {
    * @param {String} clientId the MQ client identifier.
    */
   var ClientImpl = function (uri, host, port, path, clientId) {
-    // Check dependencies are satisfied in this browser.
-    if (!("WebSocket" in global && global["WebSocket"] !== null)) {
-      throw new Error(format(ERROR.UNSUPPORTED, ["WebSocket"]));
-    }
-    if (!("localStorage" in global && global["localStorage"] !== null)) {
-      throw new Error(format(ERROR.UNSUPPORTED, ["localStorage"]));
-    }
-    if (!("ArrayBuffer" in global && global["ArrayBuffer"] !== null)) {
-      throw new Error(format(ERROR.UNSUPPORTED, ["ArrayBuffer"]));
-    }
     this._trace("MQTT.Client", uri, host, port, path, clientId);
 
     this.host = host;
