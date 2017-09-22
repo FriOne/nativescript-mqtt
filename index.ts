@@ -1,5 +1,12 @@
+import 'nativescript-websockets';
 import { IEvent, EventHandler, guid, Message } from './common';
 import * as MQTT from 'paho-mqtt';
+
+const window = {
+  setTimeout: setTimeout,
+  clearTimeout: clearTimeout
+};
+const localStorage = new Map();
 
 export interface ClientOptions {
   host? : string,
@@ -24,7 +31,7 @@ export class MQTTClient {
   private connectionLost = new EventHandler<string>();
   private messageArrived = new EventHandler<Message>();
 
-  constructor(options:ClientOptions){
+  constructor(options:ClientOptions) {
     /* options
       host: string
       port: int - default 80 | useSSL 443
